@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miss A Cosmetics · beauty & skincare</title>
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #faf7f5;
+            color: #1e1a18;
+            padding: 1.5rem 2rem;
+        }
+
+        .app {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0 1.5rem 0;
+            border-bottom: 1px solid #f0e3df;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #cb6e6e, #b34a6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-actions i {
+            font-size: 1.5rem;
+            color: #3d2e2a;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-actions i:hover {
+            color: #b34a6b;
+            transform: scale(1.03);
+        }
+
+        .cart-badge {
+            background: #b34a6b;
+            color: white;
+            border-radius: 40px;
+            padding: 0.15rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-left: -0.5rem;
+            vertical-align: top;
+            position: relative;
+            top: -0.6rem;
+        }
+
+        .auth-cta {
+            background: #f3e9e5;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #2b1f1b;
+            border: 1px solid #e3d3cd;
+            transition: 0.2s;
+            cursor: default;
+        }
+
+        .auth-cta i {
+            color: #b34a6b;
+        }
+
+        .auth-cta span {
+            background: #b34a6b;
+            color: white;
+            border-radius: 40px;
+            padding: 0.1rem 0.8rem;
+            font-size: 0.7rem;
+            margin-left: 0.2rem;
+        }
+
+        /* ===== BRAND STORY / HERO SECTION ===== */
+        .brand-story {
+            background: linear-gradient(135deg, #faf0ed 0%, #f3e9e5 100%);
+            border-radius: 40px;
+            padding: 2.5rem 3rem;
+            margin: 1.8rem 0 1.5rem 0;
+            border: 1px solid #f0e3df;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem 3rem;
+        }
+
+        .brand-story-content {
+            flex: 2;
+            min-width: 260px;
+        }
+
+        .brand-story-content .brand-tagline {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b34a6b;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .brand-story-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #1e1a18;
+            margin-bottom: 0.8rem;
+        }
+
+        .brand-story-content h2 span {
+            background: linear-gradient(135deg, #cb6e6e, #b34a6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-story-content p {
+            color: #4d3a34;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-bottom: 0.5rem;
+        }
+
+        .brand-story-content .offer-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .brand-story-content .offer-list .offer-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #2b1f1b;
+        }
+
+        .brand-story-content .offer-list .offer-item i {
+            color: #b34a6b;
+            font-size: 1.2rem;
+        }
+
+        .brand-story-image {
+            flex: 1;
+            min-width: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4.5rem;
+            background: rgba(255,255,255,0.3);
+            border-radius: 30px;
+            padding: 1rem 0.5rem;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .brand-story-image span {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* category filter */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin: 1.5rem 0 1rem 0;
+            padding: 0.5rem 0;
+        }
+
+        .category-btn {
+            background: transparent;
+            border: 1px solid #e3d3cd;
+            border-radius: 40px;
+            padding: 0.4rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #3d2e2a;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: #b34a6b;
+            color: white;
+            border-color: #b34a6b;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2rem 0 1.2rem 0;
+            letter-spacing: -0.3px;
+            color: #2b1f1b;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-title i {
+            color: #b34a6b;
+            font-size: 1.6rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.8rem 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.2rem 0.8rem 1.5rem 0.8rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.02), 0 2px 6px rgba(179, 74, 107, 0.05);
+            transition: all 0.2s ease;
+            border: 1px solid #f5edea;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(179, 74, 107, 0.08);
+            border-color: #e6d3cd;
+        }
+
+        .product-img {
+            background: #f6efec;
+            border-radius: 24px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            color: #a55c6b;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e1a18;
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+        .product-brand {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #a48178;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #2b1f1b;
+            margin: 0.2rem 0 0.6rem 0;
+        }
+
+        .product-price small {
+            font-weight: 400;
+            font-size: 0.7rem;
+            color: #a48178;
+            text-decoration: line-through;
+            margin-left: 0.4rem;
+        }
+
+        .btn-primary {
+            background: #1e1a18;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 0.5rem;
+            font-weight: 600;
+            color: white;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            transition: 0.2s;
+            cursor: pointer;
+            width: 100%;
+            border: 1px solid transparent;
+            margin-top: auto;
+        }
+
+        .btn-primary i {
+            font-size: 0.8rem;
+        }
+
+        .btn-primary:hover {
+            background: #b34a6b;
+            border-color: #b34a6b;
+            transform: scale(1.02);
+        }
+
+        .cart-summary {
+            background: white;
+            border-radius: 40px;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #e6d3cd;
+            margin: 2.5rem 0 1.5rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .cart-items-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem 1.5rem;
+        }
+
+        .cart-item-tag {
+            background: #f6efec;
+            padding: 0.3rem 1rem 0.3rem 1.2rem;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-tag i {
+            color: #b34a6b;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .cart-item-tag i:hover {
+            color: #7a3a4e;
+            transform: scale(1.1);
+        }
+
+        .cart-total {
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .checkout-btn {
+            background: #b34a6b;
+            border: none;
+            border-radius: 60px;
+            padding: 0.75rem 2.2rem;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid #b34a6b;
+        }
+
+        .checkout-btn:hover {
+            background: #942e4e;
+            transform: scale(1.02);
+        }
+
+        .checkout-btn:disabled {
+            opacity: 0.4;
+            pointer-events: none;
+            filter: grayscale(0.4);
+        }
+
+        /* Modal - Auth & Payment共用 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(2px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: white;
+            max-width: 480px;
+            width: 92%;
+            padding: 2.5rem 2rem 2rem 2rem;
+            border-radius: 48px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            position: relative;
+            transition: 0.2s;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            color: #7a5f57;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #b34a6b;
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #1e1a18;
+        }
+
+        .modal-sub {
+            color: #7a5f57;
+            margin-bottom: 1.8rem;
+            font-weight: 400;
+        }
+
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.4px;
+            color: #3d2e2a;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 60px;
+            border: 1px solid #e3d3cd;
+            background: #fcf8f6;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #b34a6b;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(179, 74, 107, 0.1);
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-top: 1.8rem;
+        }
+
+        .btn-modal {
+            background: #1e1a18;
+            border: none;
+            border-radius: 60px;
+            padding: 0.9rem;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid #1e1a18;
+        }
+
+        .btn-modal-outline {
+            background: transparent;
+            border: 1px solid #d6c4bd;
+            color: #3d2e2a;
+        }
+
+        .btn-modal-outline:hover {
+            background: #f3e9e5;
+            border-color: #b34a6b;
+        }
+
+        .btn-modal:hover {
+            background: #b34a6b;
+            border-color: #b34a6b;
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: #5d4a43;
+        }
+
+        .auth-switch a {
+            color: #b34a6b;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .auth-switch a:hover {
+            text-decoration: underline;
+        }
+
+        .empty-cart {
+            color: #a48178;
+            font-weight: 400;
+        }
+
+        .badge-new {
+            background: #b34a6b10;
+            color: #b34a6b;
+            border-radius: 60px;
+            padding: 0.2rem 1rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            border: 1px solid #b34a6b20;
+        }
+
+        /* Payment options */
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 1.2rem 0 0.8rem 0;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.7rem 1.2rem;
+            border: 2px solid #e3d3cd;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.2s;
+            background: #fcf8f6;
+        }
+
+        .payment-option:hover {
+            border-color: #b34a6b;
+            background: #faf0ed;
+        }
+
+        .payment-option.selected {
+            border-color: #b34a6b;
+            background: #f3e9e5;
+            box-shadow: 0 0 0 3px rgba(179, 74, 107, 0.1);
+        }
+
+        .payment-option input[type="radio"] {
+            accent-color: #b34a6b;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .payment-option .pay-icon {
+            font-size: 1.6rem;
+            width: 2rem;
+            text-align: center;
+            color: #3d2e2a;
+        }
+
+        .payment-option .pay-label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .payment-option .pay-desc {
+            font-size: 0.75rem;
+            color: #7a5f57;
+        }
+
+        .order-summary-box {
+            background: #f6efec;
+            border-radius: 24px;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .order-summary-box .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.2rem 0;
+        }
+
+        .order-summary-box .total {
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-top: 1px solid #d6c4bd;
+            padding-top: 0.5rem;
+            margin-top: 0.3rem;
+        }
+
+        .btn-place-order {
+            background: #b34a6b;
+            border: none;
+            border-radius: 60px;
+            padding: 0.9rem;
+            font-weight: 700;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+            margin-top: 0.8rem;
+        }
+
+        .btn-place-order:hover {
+            background: #942e4e;
+            transform: scale(1.02);
+        }
+
+        /* responsive */
+        @media (max-width: 680px) {
+            body { padding: 1rem; }
+            .navbar { flex-direction: column; align-items: stretch; }
+            .nav-actions { justify-content: flex-end; }
+            .cart-summary { flex-direction: column; align-items: stretch; gap: 1rem; }
+            .cart-total { justify-content: space-between; }
+            .checkout-btn { width: 100%; justify-content: center; }
+            .product-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 1rem; }
+            .category-filter { gap: 0.5rem; }
+            .category-btn { padding: 0.3rem 1rem; font-size: 0.75rem; }
+            .modal-card { padding: 1.8rem 1.2rem; }
+            .brand-story { padding: 1.8rem 1.5rem; flex-direction: column; text-align: center; }
+            .brand-story-content p { max-width: 100%; }
+            .brand-story-content .offer-list { justify-content: center; }
+        }
+        @media (max-width: 430px) {
+            .product-grid { grid-template-columns: 1fr 1fr; }
+            .brand-story-content h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="logo"><i class="fas fa-spa" style="background:transparent; -webkit-text-fill-color: #b34a6b;"></i> Miss A Cosmetics</div>
+        <div class="nav-actions">
+            <i class="fas fa-heart" style="color: #b34a6b;"></i>
+            <i class="fas fa-user-circle" id="openAuthBtn" style="color:#2b1f1b;"></i>
+            <div style="display: flex; align-items: center;">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge" id="cartCount">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- auth status -->
+    <div class="auth-cta" id="authStatus">
+        <i class="fas fa-user-circle"></i> <span id="userDisplay">Guest</span> 
+        <span id="authActionLabel" style="background: #b34a6b10; color:#b34a6b; font-weight:600; border:1px solid #b34a6b30; padding:0.1rem 0.8rem; border-radius:40px; margin-left:0.4rem;">login</span>
+    </div>
+
+    <!-- ====== BRAND STORY / DEFINITION ====== -->
+    <div class="brand-story">
+        <div class="brand-story-content">
+            <div class="brand-tagline"><i class="fas fa-leaf"></i> clean · conscious · beautiful</div>
+            <h2>Your daily glow <span>starts here</span></h2>
+            <p>Miss A Cosmetics is a modern beauty destination that curates <strong>clean, cruelty-free, and high-performance</strong> cosmetics, skincare, and wellness essentials. We believe that beauty should be <strong>effective, ethical, and accessible</strong> — empowering you to feel confident in your own skin.</p>
+            <div class="offer-list">
+                <span class="offer-item"><i class="fas fa-check-circle"></i> 100% cruelty-free</span>
+                <span class="offer-item"><i class="fas fa-check-circle"></i> Dermatologist-tested</span>
+                <span class="offer-item"><i class="fas fa-check-circle"></i> Sustainable packaging</span>
+                <span class="offer-item"><i class="fas fa-check-circle"></i> Free shipping over ₱999</span>
+            </div>
+        </div>
+        <div class="brand-story-image">
+            <span>🌸 ✨ 💧</span>
+        </div>
+    </div>
+
+    <!-- category filter -->
+    <div class="category-filter" id="categoryFilter">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="makeup">Makeup</button>
+        <button class="category-btn" data-category="skincare">Skincare</button>
+        <button class="category-btn" data-category="hair">Hair</button>
+        <button class="category-btn" data-category="fragrance">Fragrance</button>
+        <button class="category-btn" data-category="tools">Tools</button>
+    </div>
+
+    <!-- product grid -->
+    <div class="section-title">
+        <i class="fas fa-palette"></i> <span id="categoryTitle">All Products</span>
+        <span class="badge-new">new arrivals</span>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+
+    <!-- cart summary -->
+    <div class="cart-summary" id="cartSummary">
+        <div class="cart-items-list" id="cartItemsList">
+            <span class="empty-cart"><i class="fas fa-shopping-bag" style="margin-right:6px;"></i>Your cart is empty</span>
+        </div>
+        <div class="cart-total">
+            <span>₱<span id="cartTotal">0.00</span></span>
+            <button class="checkout-btn" id="checkoutBtn"><i class="fas fa-lock"></i> Checkout</button>
+        </div>
+    </div>
+
+    <!-- ====== AUTH MODAL ====== -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-card">
+            <span class="modal-close" id="closeAuthModal"><i class="fas fa-times"></i></span>
+            <div class="modal-title" id="modalTitle">Welcome back</div>
+            <div class="modal-sub" id="modalSub">Log in to your account</div>
+            <div class="input-group">
+                <label><i class="far fa-envelope" style="margin-right:6px;"></i> Email</label>
+                <input type="email" id="loginEmail" placeholder="hello@glow.com" value="demo@glow.com">
+            </div>
+            <div class="input-group">
+                <label><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="loginPassword" placeholder="••••••••" value="123456">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-modal" id="modalActionBtn"><i class="fas fa-arrow-right"></i> Log in</button>
+                <button class="btn-modal btn-modal-outline" id="switchAuthBtn">Create account instead</button>
+            </div>
+            <div class="auth-switch" id="authSwitchText">
+                Don't have an account? <a id="switchAuthLink">Create one</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== PAYMENT MODAL ====== -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-card">
+            <span class="modal-close" id="closePaymentModal"><i class="fas fa-times"></i></span>
+            <div class="modal-title"><i class="fas fa-credit-card" style="color:#b34a6b;"></i> Payment</div>
+            <div class="modal-sub">Choose your preferred payment method</div>
+
+            <!-- Order summary -->
+            <div class="order-summary-box" id="orderSummaryBox">
+                <div class="row"><span>Subtotal</span><span>₱<span id="paySubtotal">0.00</span></span></div>
+                <div class="row"><span>Shipping</span><span>₱0.00</span></div>
+                <div class="row total"><span>Total</span><span>₱<span id="payTotal">0.00</span></span></div>
+            </div>
+
+            <!-- Payment options -->
+            <div class="payment-options" id="paymentOptions">
+                <label class="payment-option selected" data-method="gcash">
+                    <input type="radio" name="payment" value="gcash" checked>
+                    <span class="pay-icon"><i class="fas fa-mobile-alt"></i></span>
+                    <span class="pay-label">GCash</span>
+                    <span class="pay-desc">via QR / mobile</span>
+                </label>
+                <label class="payment-option" data-method="paymaya">
+                    <input type="radio" name="payment" value="paymaya">
+                    <span class="pay-icon"><i class="fas fa-credit-card"></i></span>
+                    <span class="pay-label">PayMaya</span>
+                    <span class="pay-desc">digital wallet</span>
+                </label>
+                <label class="payment-option" data-method="paypal">
+                    <input type="radio" name="payment" value="paypal">
+                    <span class="pay-icon"><i class="fab fa-paypal"></i></span>
+                    <span class="pay-label">PayPal</span>
+                    <span class="pay-desc">online payment</span>
+                </label>
+                <label class="payment-option" data-method="bank">
+                    <input type="radio" name="payment" value="bank">
+                    <span class="pay-icon"><i class="fas fa-university"></i></span>
+                    <span class="pay-label">Bank Transfer</span>
+                    <span class="pay-desc">BPI / BDO / Metro</span>
+                </label>
+                <label class="payment-option" data-method="cod">
+                    <input type="radio" name="payment" value="cod">
+                    <span class="pay-icon"><i class="fas fa-hand-holding-usd"></i></span>
+                    <span class="pay-label">Cash on Delivery</span>
+                    <span class="pay-desc">pay upon arrival</span>
+                </label>
+            </div>
+
+            <button class="btn-place-order" id="placeOrderBtn"><i class="fas fa-check-circle"></i> Place Order</button>
+            <p style="text-align:center; font-size:0.75rem; color:#a48178; margin-top:0.8rem;">Your payment is securely processed</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // ---------- EXPANDED PRODUCT DATABASE ----------
+        const products = [
+            // Makeup
+            { id: 1, name: "Velvet Matte Lipstick", brand: "Nude Rose", price: 24.90, oldPrice: 32.00, emoji: "💄", category: "makeup" },
+            { id: 2, name: "Dewy Glow Highlighter", brand: "Pearl Drop", price: 29.50, oldPrice: null, emoji: "✨", category: "makeup" },
+            { id: 3, name: "Silk Blush", brand: "Peach Petal", price: 19.90, oldPrice: 26.00, emoji: "🌸", category: "makeup" },
+            { id: 4, name: "Brow Sculpt Gel", brand: "Define", price: 16.50, oldPrice: null, emoji: "✏️", category: "makeup" },
+            { id: 5, name: "Liquid Eyeliner", brand: "Precision", price: 14.00, oldPrice: 18.00, emoji: "🖊️", category: "makeup" },
+            { id: 6, name: "Volume Mascara", brand: "Lash Dream", price: 21.00, oldPrice: 28.00, emoji: "👁️", category: "makeup" },
+            { id: 7, name: "Matte Foundation", brand: "Cover Perfect", price: 34.00, oldPrice: 42.00, emoji: "🎨", category: "makeup" },
+            { id: 8, name: "Concealer Wand", brand: "Hide & Glow", price: 18.00, oldPrice: 24.00, emoji: "🌟", category: "makeup" },
+            { id: 9, name: "Setting Spray", brand: "Stay Perfect", price: 22.00, oldPrice: 28.00, emoji: "🌊", category: "makeup" },
+            { id: 10, name: "Eyeshadow Palette", brand: "Sunset Vibes", price: 39.00, oldPrice: 52.00, emoji: "🌈", category: "makeup" },
+            { id: 11, name: "Lip Gloss Set", brand: "Shine On", price: 26.00, oldPrice: 34.00, emoji: "💋", category: "makeup" },
+            { id: 12, name: "Contour Stick", brand: "Sculpt & Define", price: 23.00, oldPrice: null, emoji: "🌓", category: "makeup" },
+            // Skincare
+            { id: 13, name: "Hydrating Serum", brand: "Aqua Boost", price: 38.00, oldPrice: 48.00, emoji: "💧", category: "skincare" },
+            { id: 14, name: "Vitamin C Brightener", brand: "Glow Drops", price: 42.00, oldPrice: 55.00, emoji: "🍊", category: "skincare" },
+            { id: 15, name: "Retinol Night Cream", brand: "Age Defy", price: 46.00, oldPrice: 60.00, emoji: "🌙", category: "skincare" },
+            { id: 16, name: "Gentle Cleanser", brand: "Pure Clean", price: 19.00, oldPrice: 25.00, emoji: "🧴", category: "skincare" },
+            { id: 17, name: "Exfoliating Scrub", brand: "Smooth Skin", price: 24.00, oldPrice: 32.00, emoji: "🧖", category: "skincare" },
+            { id: 18, name: "Moisturizing Gel", brand: "Dewy Fresh", price: 28.00, oldPrice: 36.00, emoji: "💦", category: "skincare" },
+            { id: 19, name: "Eye Cream", brand: "Bright Eyes", price: 31.00, oldPrice: 40.00, emoji: "👀", category: "skincare" },
+            { id: 20, name: "Sunscreen SPF 50", brand: "Sun Shield", price: 27.00, oldPrice: 34.00, emoji: "☀️", category: "skincare" },
+            { id: 21, name: "Niacinamide Serum", brand: "Pore Control", price: 33.00, oldPrice: 42.00, emoji: "🧪", category: "skincare" },
+            { id: 22, name: "Facial Mist", brand: "Rose Water", price: 16.00, oldPrice: 20.00, emoji: "🌹", category: "skincare" },
+            { id: 23, name: "Sheet Mask Pack", brand: "Hydra Glow", price: 18.00, oldPrice: null, emoji: "🎭", category: "skincare" },
+            { id: 24, name: "Overnight Mask", brand: "Sleep Recovery", price: 35.00, oldPrice: 45.00, emoji: "🌜", category: "skincare" },
+            // Hair
+            { id: 25, name: "Shampoo & Conditioner", brand: "Smooth Silk", price: 29.00, oldPrice: 38.00, emoji: "🧴", category: "hair" },
+            { id: 26, name: "Hair Serum", brand: "Shine & Protect", price: 22.00, oldPrice: 28.00, emoji: "✨", category: "hair" },
+            { id: 27, name: "Dry Shampoo", brand: "Fresh Style", price: 17.00, oldPrice: 22.00, emoji: "🌸", category: "hair" },
+            { id: 28, name: "Hair Mask", brand: "Deep Repair", price: 32.00, oldPrice: 40.00, emoji: "🧖", category: "hair" },
+            { id: 29, name: "Heat Protect Spray", brand: "Thermal Shield", price: 19.00, oldPrice: 25.00, emoji: "🔥", category: "hair" },
+            { id: 30, name: "Curl Defining Cream", brand: "Bounce & Shine", price: 24.00, oldPrice: 30.00, emoji: "🌀", category: "hair" },
+            // Fragrance
+            { id: 31, name: "Eau de Parfum", brand: "Blossom Bloom", price: 55.00, oldPrice: 72.00, emoji: "🌸", category: "fragrance" },
+            { id: 32, name: "Perfume Oil", brand: "Mystic Wood", price: 48.00, oldPrice: 62.00, emoji: "🌲", category: "fragrance" },
+            { id: 33, name: "Body Mist", brand: "Fresh Cotton", price: 19.00, oldPrice: 25.00, emoji: "☁️", category: "fragrance" },
+            { id: 34, name: "Cologne Spray", brand: "Citrus Wave", price: 34.00, oldPrice: 44.00, emoji: "🍋", category: "fragrance" },
+            { id: 35, name: "Incense Roller", brand: "Calm Essence", price: 26.00, oldPrice: 33.00, emoji: "🕯️", category: "fragrance" },
+            // Tools
+            { id: 36, name: "Makeup Sponge", brand: "Blend Pro", price: 12.00, oldPrice: 16.00, emoji: "🧽", category: "tools" },
+            { id: 37, name: "Brush Set", brand: "Pro Collection", price: 38.00, oldPrice: 50.00, emoji: "🖌️", category: "tools" },
+            { id: 38, name: "Eyelash Curler", brand: "Lash Lift", price: 15.00, oldPrice: null, emoji: "🔧", category: "tools" },
+            { id: 39, name: "Pimple Patches", brand: "Clear Skin", price: 10.00, oldPrice: 14.00, emoji: "🩹", category: "tools" },
+            { id: 40, name: "Face Roller", brand: "Jade Glow", price: 22.00, oldPrice: 28.00, emoji: "💎", category: "tools" },
+        ];
+
+        // ---------- STATE ----------
+        let cart = [];
+        let isLoggedIn = false;
+        let currentUser = "Guest";
+        let activeCategory = "all";
+
+        // DOM refs
+        const productGrid = document.getElementById('productGrid');
+        const cartItemsList = document.getElementById('cartItemsList');
+        const cartTotalEl = document.getElementById('cartTotal');
+        const cartCountEl = document.getElementById('cartCount');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const authModal = document.getElementById('authModal');
+        const paymentModal = document.getElementById('paymentModal');
+        const openAuthBtn = document.getElementById('openAuthBtn');
+        const closeAuthModal = document.getElementById('closeAuthModal');
+        const closePaymentModal = document.getElementById('closePaymentModal');
+        const modalActionBtn = document.getElementById('modalActionBtn');
+        const switchAuthBtn = document.getElementById('switchAuthBtn');
+        const switchAuthLink = document.getElementById('switchAuthLink');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSub = document.getElementById('modalSub');
+        const authSwitchText = document.getElementById('authSwitchText');
+        const userDisplay = document.getElementById('userDisplay');
+        const authActionLabel = document.getElementById('authActionLabel');
+        const categoryTitle = document.getElementById('categoryTitle');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const paySubtotal = document.getElementById('paySubtotal');
+        const payTotal = document.getElementById('payTotal');
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+
+        let isLoginMode = true;
+
+        // ---------- RENDER PRODUCTS ----------
+        function renderProducts(category = 'all') {
+            const filtered = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+            
+            productGrid.innerHTML = '';
+            if (filtered.length === 0) {
+                productGrid.innerHTML = `<p style="grid-column:1/-1; text-align:center; color:#a48178; padding:2rem;">No products in this category.</p>`;
+                return;
+            }
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-img">${p.emoji}</div>
+                    <div class="product-name">${p.name}</div>
+                    <div class="product-brand">${p.brand}</div>
+                    <div class="product-price">₱${p.price.toFixed(2)} ${p.oldPrice ? `<small>₱${p.oldPrice.toFixed(2)}</small>` : ''}</div>
+                    <button class="btn-primary add-to-cart" data-id="${p.id}"><i class="fas fa-plus"></i> Add to bag</button>
+                `;
+                productGrid.appendChild(card);
+            });
+
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(btn.dataset.id);
+                    const product = products.find(p => p.id === id);
+                    if (product) addToCart(product);
+                });
+            });
+        }
+
+        // ---------- CATEGORY FILTER ----------
+        function setCategory(category) {
+            activeCategory = category;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+            const names = {
+                'all': 'All Products',
+                'makeup': 'Makeup',
+                'skincare': 'Skincare',
+                'hair': 'Hair',
+                'fragrance': 'Fragrance',
+                'tools': 'Tools'
+            };
+            categoryTitle.textContent = names[category] || 'Products';
+            renderProducts(category);
+        }
+
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setCategory(btn.dataset.category);
+            });
+        });
+
+        // ---------- CART ----------
+        function addToCart(product) {
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            cartItemsList.innerHTML = '';
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = `<span class="empty-cart"><i class="fas fa-shopping-bag" style="margin-right:6px;"></i>Your cart is empty</span>`;
+            } else {
+                cart.forEach(item => {
+                    const tag = document.createElement('span');
+                    tag.className = 'cart-item-tag';
+                    tag.innerHTML = `${item.emoji} ${item.name} (${item.qty}) <i class="fas fa-times-circle remove-item" data-id="${item.id}"></i>`;
+                    cartItemsList.appendChild(tag);
+                });
+                document.querySelectorAll('.remove-item').forEach(el => {
+                    el.addEventListener('click', (e) => {
+                        const id = parseInt(el.dataset.id);
+                        removeFromCart(id);
+                    });
+                });
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            cartTotalEl.textContent = total.toFixed(2);
+            const count = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCountEl.textContent = count;
+
+            checkoutBtn.disabled = (cart.length === 0);
+            if (cart.length === 0) {
+                checkoutBtn.innerHTML = `<i class="fas fa-lock"></i> Checkout`;
+            } else {
+                checkoutBtn.innerHTML = `<i class="fas fa-lock"></i> Checkout (${count})`;
+            }
+        }
+
+        function getCartTotal() {
+            return cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        }
+
+        // ---------- AUTH ----------
+        function openAuthModal(mode = 'login') {
+            isLoginMode = (mode === 'login');
+            if (isLoginMode) {
+                modalTitle.textContent = 'Welcome back';
+                modalSub.textContent = 'Log in to your account';
+                modalActionBtn.innerHTML = `<i class="fas fa-arrow-right"></i> Log in`;
+                switchAuthBtn.textContent = 'Create account instead';
+                authSwitchText.innerHTML = `Don't have an account? <a id="switchAuthLink">Create one</a>`;
+                document.getElementById('switchAuthLink').addEventListener('click', (e) => { e.preventDefault(); openAuthModal('create'); });
+            } else {
+                modalTitle.textContent = 'Create account';
+                modalSub.textContent = 'Join Glow & Co.';
+                modalActionBtn.innerHTML = `<i class="fas fa-user-plus"></i> Create account`;
+                switchAuthBtn.textContent = 'Back to login';
+                authSwitchText.innerHTML = `Already have an account? <a id="switchAuthLink">Log in</a>`;
+                document.getElementById('switchAuthLink').addEventListener('click', (e) => { e.preventDefault(); openAuthModal('login'); });
+            }
+            authModal.classList.add('active');
+            document.getElementById('loginEmail').value = 'demo@glow.com';
+            document.getElementById('loginPassword').value = '123456';
+        }
+
+        function closeAuthModalFn() {
+            authModal.classList.remove('active');
+        }
+
+        function handleAuthAction() {
+            const email = document.getElementById('loginEmail').value.trim();
+            const pass = document.getElementById('loginPassword').value.trim();
+            if (!email || !pass) {
+                alert('Please fill in email and password.');
+                return;
+            }
+            if (isLoginMode) {
+                isLoggedIn = true;
+                currentUser = email.split('@')[0] || 'User';
+                userDisplay.textContent = currentUser;
+                authActionLabel.textContent = 'logout';
+                authActionLabel.style.background = '#f0e3df';
+                authActionLabel.style.color = '#3d2e2a';
+                authActionLabel.style.border = '1px solid #d6c4bd';
+                alert(`✅ Logged in as ${currentUser}`);
+            } else {
+                isLoggedIn = true;
+                currentUser = email.split('@')[0] || 'NewUser';
+                userDisplay.textContent = currentUser;
+                authActionLabel.textContent = 'logout';
+                authActionLabel.style.background = '#f0e3df';
+                authActionLabel.style.color = '#3d2e2a';
+                authActionLabel.style.border = '1px solid #d6c4bd';
+                alert(`🎉 Account created! Welcome ${currentUser}`);
+            }
+            closeAuthModalFn();
+            updateCheckoutButtonState();
+        }
+
+        function logout() {
+            isLoggedIn = false;
+            currentUser = 'Guest';
+            userDisplay.textContent = 'Guest';
+            authActionLabel.textContent = 'login';
+            authActionLabel.style.background = '#b34a6b10';
+            authActionLabel.style.color = '#b34a6b';
+            authActionLabel.style.border = '1px solid #b34a6b30';
+            updateCheckoutButtonState();
+        }
+
+        function updateCheckoutButtonState() {
+            if (cart.length === 0) {
+                checkoutBtn.disabled = true;
+                checkoutBtn.innerHTML = `<i class="fas fa-lock"></i> Checkout`;
+                return;
+            }
+            if (!isLoggedIn) {
+                checkoutBtn.disabled = false;
+                checkoutBtn.innerHTML = `<i class="fas fa-lock"></i> Login to checkout`;
+            } else {
+                checkoutBtn.disabled = false;
+                const count = cart.reduce((sum, item) => sum + item.qty, 0);
+                checkoutBtn.innerHTML = `<i class="fas fa-lock"></i> Checkout (${count})`;
+            }
+        }
+
+        // ---------- PAYMENT MODAL ----------
+        function openPaymentModal() {
+            const total = getCartTotal();
+            paySubtotal.textContent = total.toFixed(2);
+            payTotal.textContent = total.toFixed(2);
+            paymentModal.classList.add('active');
+        }
+
+        function closePaymentModalFn() {
+            paymentModal.classList.remove('active');
+        }
+
+        document.querySelectorAll('.payment-option').forEach(opt => {
+            opt.addEventListener('click', function() {
+                document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+            });
+        });
+
+        function placeOrder() {
+            const selected = document.querySelector('.payment-option.selected');
+            const method = selected ? selected.dataset.method : 'cod';
+            const methodNames = {
+                'gcash': 'GCash',
+                'paymaya': 'PayMaya',
+                'paypal': 'PayPal',
+                'bank': 'Bank Transfer',
+                'cod': 'Cash on Delivery'
+            };
+            const total = getCartTotal();
+            alert(`✅ Order placed successfully!\nPayment method: ${methodNames[method] || method}\nTotal: ₱${total.toFixed(2)}\nThank you, ${currentUser}!`);
+            cart = [];
+            updateCartUI();
+            updateCheckoutButtonState();
+            closePaymentModalFn();
+        }
+
+        // ---------- CHECKOUT FLOW ----------
+        function handleCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty.');
+                return;
+            }
+            if (!isLoggedIn) {
+                alert('Please log in or create an account to proceed with checkout.');
+                openAuthModal('login');
+                return;
+            }
+            openPaymentModal();
+        }
+
+        // ---------- EVENT LISTENERS ----------
+        openAuthBtn.addEventListener('click', () => {
+            if (isLoggedIn) {
+                if (confirm('Logout from your account?')) logout();
+            } else {
+                openAuthModal('login');
+            }
+        });
+
+        closeAuthModal.addEventListener('click', closeAuthModalFn);
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) closeAuthModalFn();
+        });
+
+        closePaymentModal.addEventListener('click', closePaymentModalFn);
+        paymentModal.addEventListener('click', (e) => {
+            if (e.target === paymentModal) closePaymentModalFn();
+        });
+
+        modalActionBtn.addEventListener('click', handleAuthAction);
+        switchAuthBtn.addEventListener('click', () => {
+            openAuthModal(isLoginMode ? 'create' : 'login');
+        });
+
+        checkoutBtn.addEventListener('click', handleCheckout);
+        placeOrderBtn.addEventListener('click', placeOrder);
+
+        authActionLabel.addEventListener('click', (e) => {
+            if (isLoggedIn) {
+                if (confirm('Logout?')) logout();
+            } else {
+                openAuthModal('login');
+            }
+        });
+
+        // ---------- INIT ----------
+        setCategory('all');
+        updateCartUI();
+        updateCheckoutButtonState();
+
+        console.log('✨ Glow & Co. ready with brand story & payment methods!');
+    })();
+</script>
+</body>
+</html>
